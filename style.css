@@ -11,11 +11,32 @@
 :root {
   --bgOrange: #e84949;
 }
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --primary-color: #e84949;
+}
 
+.dark-mode {
+  --bg-color: #121212;
+  --text-color: white;
+  --primary-color: #ff5733;
+  /* --nav-text-color: #952828; */
+}
+#wrapper {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
 #wrapper {
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
+}
+.mode-toggle {
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
 }
 .container {
   width: 1200px;
@@ -41,7 +62,12 @@
 }
 .text-logo {
   margin-left: -1.2rem;
-  font-size: 28px;
+  font-size: 44px;
+  background-image: url("./userAsset/bg-image.jpeg");
+  background-size:contain;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
 }
 .nav-itmes {
   display: flex;
@@ -56,11 +82,21 @@
 a {
   /* font-family: "Be Vietnam Pro", sans-serif; */
   text-decoration: none;
-  color: black;
+/*   color: black; */
 }
 a:hover {
   transition: 0.8s;
   font-weight: bold;
+}
+.nav-items a {
+  color: white; 
+   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Dark Mode Anchor Tag  */
+.dark-mode .nav-items a {
+  color: #f8f8f8; 
 }
 .hero-section {
   position: relative;
@@ -105,6 +141,10 @@ a:hover {
 .role {
   color: #4e45d5;
   font-weight: 800;
+   background-image: url("./userAsset/bg-image.jpeg");
+  background-size:contain;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .hero-section-subheading {
   font-size: 50px;
@@ -449,10 +489,14 @@ a:hover {
   font-weight: bold;
   /* font-family: ; */
   color: rgb(231, 231, 231);
-  bottom: -34.5%;
+  bottom: -31.5%;
   right: -2%;
   user-select: none;
   overflow-y: hidden;
+  background-image: url("./userAsset/bg-image.jpeg");
+  background-size:contain;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .blob-style {
   position: absolute;
