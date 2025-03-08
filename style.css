@@ -610,3 +610,11 @@ font-weight: normal;
   gap: 1rem;
   font-size: 2.2rem;
 }
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+#btn {
+  animation: pulse 1.5s infinite;
+}
