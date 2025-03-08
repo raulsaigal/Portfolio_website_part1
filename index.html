@@ -32,6 +32,11 @@
                     <div><a href="#contact Me">Contact Me</a></div>
                 </div>
 
+                <div class="mode-toggle">
+                    <i id="theme-icon" class="fa-solid fa-moon"></i>
+                </div>
+                
+
 
 
             </div>
@@ -336,6 +341,22 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        const modeToggle = document.getElementById("theme-icon");
+        const wrapper = document.getElementById("wrapper");
+      
+        modeToggle.addEventListener("click", () => {
+          document.body.classList.toggle("dark-mode");
+          
+          if (document.body.classList.contains("dark-mode")) {
+            modeToggle.classList.remove("fa-moon");
+            modeToggle.classList.add("fa-sun");
+          } else {
+            modeToggle.classList.remove("fa-sun");
+            modeToggle.classList.add("fa-moon");
+          }
+        });
+      </script>
     
     <script>
         var typeData = new Typed(".role", {
