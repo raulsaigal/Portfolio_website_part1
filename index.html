@@ -266,29 +266,37 @@
 
                 <h3 class="contactus-subheading">Questions,Thoughts or Just Want To Say Hello?</h3>
 
-                <div class="contactus-forms-container">
-                    <form class="form" action="">
+                 <div class="contactus-forms-container">
+                    <h2 style="text-align:center; margin-bottom: 15px; color: #333;">Get in Touch</h2>
+                    <form class="form" id="contact-form">
                         <div class="formfield-container">
-                            <input class="formfield" type="text" name="name" id="" placeholder="Enter your name">
-
-                            <input class="formfield" type="email" name="email" id=""
-                                placeholder="Enter your email address">
-
-                            <input class="formfield" type="text" name="subject" id="" placeholder="Enter your subject">
-
-                            <textarea name="message" id="" cols="30" rows="10" class="formfield formfield-textarea"
-                                placeholder="Enter your message"></textarea>
+                            <input class="formfield" type="text" name="name" id="name" placeholder="Enter your name" required>
+                            <input class="formfield" type="email" name="email" id="email" placeholder="Enter your email address" required>
+                            <input class="formfield" type="text" name="subject" id="subject" placeholder="Enter your subject" required>
+                            <textarea name="message" id="message" cols="30" rows="10" class="formfield formfield-textarea" placeholder="Enter your message" required></textarea>
                         </div>
-
-                        <div>
-                            <button class="button" type="submit" id="submit-btn">Send Message <i
-                                    class="submit-icon fa-solid fa-paper-plane"> </i>
-                            </button>
-                        </div>
-
-
+                        <button class="button" type="submit" id="submit-btn">Send Message <i class="fa-solid fa-paper-plane"></i></button>
                     </form>
                 </div>
+            
+                <script>
+                    document.getElementById("contact-form").addEventListener("submit", function(event) {
+                        event.preventDefault();
+                        
+                        const name = document.getElementById("name").value;
+                        const email = document.getElementById("email").value;
+                        const subject = document.getElementById("subject").value;
+                        const message = document.getElementById("message").value;
+            
+                        if (!name || !email || !subject || !message) {
+                            alert("Please fill in all fields.");
+                            return;
+                        }
+            
+                        alert("Thank you, " + name + "! Your message has been sent successfully.");
+                        document.getElementById("contact-form").reset();
+                    });
+                </script>
             </div>
         </div>
 
