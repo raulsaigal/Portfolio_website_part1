@@ -8,9 +8,12 @@
   font-family: "Be Vietnam Pro", sans-serif;
   /* scroll-behavior: smooth; */
 }
+
+
 :root {
   --bgOrange: #e84949;
 }
+
 :root {
   --bg-color: white;
   --text-color: black;
@@ -23,20 +26,24 @@
   --primary-color: #ff5733;
   /* --nav-text-color: #952828; */
 }
+
 #wrapper {
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.4s ease, color 0.4s ease;
 }
-#wrapper {
-  height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
+
 .mode-toggle {
   font-size: 24px;
   cursor: pointer;
   padding: 10px;
+}
+
+
+#wrapper {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .container {
   width: 1200px;
@@ -78,11 +85,12 @@
   font-size: 28px;
   font-weight: 500;
   cursor: pointer;
+  
 }
 a {
   /* font-family: "Be Vietnam Pro", sans-serif; */
   text-decoration: none;
-/*   color: black; */
+  /* color: rgb(231, 222, 222); */
 }
 a:hover {
   transition: 0.8s;
@@ -95,7 +103,7 @@ a:hover {
 }
 
 /* Dark Mode Anchor Tag  */
-.dark-mode .nav-items a {
+ .dark-mode .nav-items a {
   color: #f8f8f8; 
 }
 .hero-section {
@@ -139,12 +147,14 @@ a:hover {
   font-weight: 500;
 }
 .role {
+
   color: #4e45d5;
   font-weight: 800;
-   background-image: url("./userAsset/bg-image.jpeg");
+  background-image: url("./userAsset/bg-image.jpeg");
   background-size:contain;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  /* font-weight: bold; */
 }
 .hero-section-subheading {
   font-size: 50px;
@@ -459,7 +469,63 @@ a:hover {
 }
 #project4 {
   margin-left: 120px;
-  background-image: url(projects/Project4.png.png);
+  background-image: url(projects/Project4.png);
+}
+@media (max-width:1300px) {
+  .page-header {
+    padding-top: 30px;
+    color: var(--bgOrange);
+    text-align: center;
+    font-size: 40px;
+  }
+  .project-container {
+    padding: 5px;
+    margin: 10px;
+    gap: 60px;
+  }
+  .project-card {
+    width: 100%;
+    height: 300px;
+  }
+  .project-card {
+    background-size: cover;
+    background-position: center;
+  }
+  .project-content {
+    scale: 0.5;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+  .project-content-left {
+    left: 0;
+  }
+  .project-heading {
+    font-size: 40px;
+    width: 100%;
+  }
+  .project-sub-heading {
+    width: 100%;
+  }
+  #project2 {
+    margin-left: 0;
+  }
+  #project4 {
+    margin-left: 0;
+  }
+  .project-skill-container {
+    width: 100%;
+  }
+  .project-skill {
+    width: 35px;
+  }
+  .project-card:hover .project-number {
+    display: none;
+  }
+  .project-card:hover .project-content {
+    scale: 0.55;
+  }
 }
 .skills-container {
   position: relative;
@@ -497,6 +563,7 @@ a:hover {
   background-size:contain;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  
 }
 .blob-style {
   position: absolute;
@@ -634,6 +701,8 @@ transition: all,0.4s;
   user-select: none;
   font-size:5em ;
   font-weight: bold;
+  
+
 }
 .link-wrapper{
   display: flex;
@@ -654,6 +723,8 @@ font-weight: normal;
   gap: 1rem;
   font-size: 2.2rem;
 }
+
+
 @keyframes pulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.1); }
