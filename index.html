@@ -342,21 +342,40 @@
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
+      document.addEventListener("DOMContentLoaded", () => {
         const modeToggle = document.getElementById("theme-icon");
-        const wrapper = document.getElementById("wrapper");
-      
+        const body = document.body;
+    
+        // Load saved theme preference from localStorage
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+            body.classList.add(savedTheme);
+            updateIcon(savedTheme);
+        }
+    
         modeToggle.addEventListener("click", () => {
-          document.body.classList.toggle("dark-mode");
-          
-          if (document.body.classList.contains("dark-mode")) {
-            modeToggle.classList.remove("fa-moon");
-            modeToggle.classList.add("fa-sun");
-          } else {
-            modeToggle.classList.remove("fa-sun");
-            modeToggle.classList.add("fa-moon");
-          }
+            if (body.classList.contains("dark-mode")) {
+                body.classList.remove("dark-mode");
+                localStorage.setItem("theme", "light-mode");
+                updateIcon("light-mode");
+            } else {
+                body.classList.add("dark-mode");
+                localStorage.setItem("theme", "dark-mode");
+                updateIcon("dark-mode");
+            }
         });
-      </script>
+    
+        function updateIcon(mode) {
+            if (mode === "dark-mode") {
+                modeToggle.classList.remove("fa-moon");
+                modeToggle.classList.add("fa-sun");
+            } else {
+                modeToggle.classList.remove("fa-sun");
+                modeToggle.classList.add("fa-moon");
+            }
+        }
+    });
+</script>
     
     <script>
         var typeData = new Typed(".role", {
